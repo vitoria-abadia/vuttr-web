@@ -1,68 +1,82 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+body { 
+  background: url(/img/bg-desktop.jpg);
+  color: white;
 }
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+.container { 
   min-height: 100vh;
+  width: 447px;
+  margin: 0 auto;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.title { 
+  color: #FFF;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 40px;
+  display: flex;
+  font-weight: 400;
+  animation: flipTitle 2s;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+.subTitle { 
+  color: #FFF;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 29px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@keyframes flipTitle {
+  from{
+    transform: rotateX(90deg); 
+  }
+  to{ 
+    transform: rotateX(0deg);
+  }
+}
+
+.containerInput { 
+  padding: 4px 6px;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  width: 110px;
+  margin: 0px 0; 
+  border: 1px solid rgba(255, 255, 255, 0.50);
+  background: rgba(255, 255, 255,0.10);
+  backdrop-filter: blur(4px);
+}
+.containerInput input { 
+  width: 85px;
+  background-color:transparent ;
+  border: 0;
+  color: #FFF;
+  outline: none;
+}
+.containerInput input::placeholder{ 
+  color: #F1f1f1;
+}
+
+.buttonSearch { 
+  background: transparent;
+  line-height: normal;
+  border: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  transition: transform 0.5s; 
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.buttonSeach { 
+  line-height: normal;
+  width: 110px; 
+  border: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.buttonSearch:hover { 
+  transform: scale(1.2);
 }
