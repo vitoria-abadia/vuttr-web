@@ -1,0 +1,86 @@
+/* Estilos para o modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-body {
+  padding: 20px;
+  border: 1px solid #000;
+  background: #201E1E;
+  border-radius: 8px;
+  width: 400px;
+  text-align: left;
+}
+
+.titleAdd {
+  font-family: 'Intel', sans-serif;
+  flex-direction: column;
+  color:#fff;
+  padding: 5px 30px;
+}
+
+/* Estilos para o formulário dentro do modal */
+.Input-container {
+  display: flex;
+  color: #ffff;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+label {
+  font-weight: lighter;
+  align-items: left;
+  font-family: 'Intel', sans-serif;
+  /* Adicione a fonte Intel e fallback para sans-serif */
+  margin-bottom: 6px;
+}
+
+input {
+  width: 300px;
+  padding: 5px 30px;
+  color:#fff;
+  border: 1px solid rgba(255, 255, 255, 0.50);
+  background: rgba(255, 255, 255, 0.10);
+}
+
+/* Estilos para o botão de adicionar ferramenta */
+.container {
+  flex-direction: column;
+  padding: 16px 24px;
+  text-align: left;
+
+}
+
+.containerInput {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* Estilos para o botão de adicionar */
+button {
+  color:#fff;
+  background: transparent;
+  padding: 5px 10px;
+  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.50);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%),
+    rgba(255, 255, 255, 0.10);
+  box-shadow: 4px 4px 2px 0px #030000;
+  cursor: pointer;
+  margin: 0 auto;
+  /* Adicione esta linha para centralizar o botão */
+}
+
+button:hover {
+  background-color: #5a5e5b;
+}

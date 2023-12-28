@@ -1,0 +1,165 @@
+body {
+  background: url(/img/bg-desktop.jpg);
+  color: white;
+}
+
+.container {
+  min-height: 100vh;
+  width: 100%;
+  margin: 0 210px;
+}
+
+.add-icon {
+  margin-right: 8px;
+}
+
+.title {
+  font-size: 44px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-style: normal;
+}
+
+.subTitle {
+  font-size: px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-style: light;
+}
+
+@keyframes flipTitle {
+  from {
+    transform: rotateX(90deg);
+  }
+  to {
+    transform: rotateX(0deg);
+  }
+}
+
+.header {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.containerInput {
+  padding: 5px 6px;
+  align-items: center;
+  width: auto;
+}
+
+.containerInput input {
+  width: 20px;
+  height: 16px;
+  background-color: transparent;
+  color: #FFF;
+}
+
+.containerInput input::placeholder {
+  color: #F1f1f1;
+  padding: 5px;
+}
+
+.buttonSearch {
+  background: transparent;
+  line-height: normal;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+
+.search-container {
+  position: relative;
+  display: center;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Input-search { 
+  width: 70px;
+  color:#FFF;
+  border: 1px solid rgba(255, 255, 255, 0.50);
+  background: var(--surface-color-dark-mode, rgba(255, 255, 255, 0.10));
+  backdrop-filter: blur(4px);
+  padding: 5px 30px;
+}
+.search-input {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  z-index: 1;
+}
+
+.buttonSeach {
+  line-height: normal;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonSearch:hover {
+  transform: scale(1.2);
+}
+
+.containerInput input {
+  width: 50px;
+  background-color: transparent;
+  border: 0;
+  color: #FFF;
+  outline: none;
+}
+
+.containerInput input::placeholder {
+  color: #F1f1f1;
+  position: absolute;
+  top: 50%;
+  transform: translateY(50%);
+  left: 10px;
+  transition: transform 0.5s, left 0.5s; 
+}
+
+.buttonSearch {
+  background: transparent;
+  line-height: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+
+.search-container {
+  position: relative;
+  display: center;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-input {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}

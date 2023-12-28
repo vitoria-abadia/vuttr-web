@@ -1,0 +1,58 @@
+
+/* Estilos para o container de pesquisa */
+.search-container {
+    width: 768px;
+    margin: auto;
+    display: flex;
+    margin-top: 8px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Estilos para o input de pesquisa */
+  .search-input-container {
+    display: flex;
+    padding: 3px 1px;
+    align-items: center;
+    border: 1px solid #707070;
+    border-radius: 4px;
+    transition: all 0.3s linear;
+  }
+  
+  /* Estilos para o ícone de lupa */
+  .search-icon {
+    color: #fff;
+    font-size: 1.25rem;
+  }
+  
+  /* Estilos para o input de pesquisa */
+  .search-input {
+    width: 64px;
+    height: 2rem;
+    border: none;
+    background: transparent;
+    color: #fff;
+    padding: 0.5rem 0.75rem;
+    outline: none;
+    transition: all 0.3s linear;
+    &::placeholder {
+      color: #d6d4d4;
+    }
+  }
+  
+  /* Estilos para o botão de pesquisa */
+  .search-button {
+    padding: 0.25rem 0.5rem;
+    background-color: #fff;
+    border-radius: 4px;
+    transition: all 0.3s linear;
+    &:hover {
+      color: #749cc7;
+    }
+  }
+  
+  /* Estilos para o botão 'New' */
+  .new-button {
+    /* Adicione os estilos do botão 'New' aqui */
+  }
+  

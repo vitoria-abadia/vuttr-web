@@ -1,0 +1,40 @@
+/* Rectangle 4 */
+.tool {
+    width: 750px;
+    height: 150px;
+    border: 1px solid rgba(255, 255, 255, 0.50);
+    background: #201E1E;
+    backdrop-filter: blur(2px);
+    flex-direction: column;
+    padding: 2px 25px 0;
+  
+  /* Notion */
+  .tool h3 a {
+    color: #0d09ed;
+    font-family: Inter;
+    font-size: 30px;
+    font-style: normal;
+  }
+  
+  /* All in one to organize teams and ideas. Write, plan, collaborate, and get organized. */
+  .tool p {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+  }
+  
+  /* #organization #planning #collaboration #writing #calendar */
+  .tags {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    white-space: pre-line;
+  }
+
+  .tags:not(:first-child) {
+    margin-left: 12px;
+  }
+}
+  
