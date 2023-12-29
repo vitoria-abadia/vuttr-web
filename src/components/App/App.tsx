@@ -33,7 +33,6 @@ function App() {
       await fetch('http://localhost:3000/' + id, {
         method: 'DELETE',
       });
-
       // Atualiza localmente o estado de ferramentas adicionando a nova ferramenta.
       setTools(p => p.filter(i => i.id != id))
 

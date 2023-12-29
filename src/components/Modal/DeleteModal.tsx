@@ -1,7 +1,7 @@
 import { Dialog } from '@mui/material';
 import {faTimes} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import './Modal.css';
+import './../Style/Modal.css';
 
 interface Props {
   submit: () => Promise<void>;

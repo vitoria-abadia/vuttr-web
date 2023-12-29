@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { RemoveModal } from '../Modal/DeleteModal';
-import './Style/ToolStyle.css'
+import './../Style/ToolStyle.css';
 
 interface ToolProps {
   id: string;

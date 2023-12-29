@@ -1,3 +1,4 @@
+
 /* Rectangle 4 */
 .tool {
     width: 730px;
@@ -8,13 +9,13 @@
     flex-direction: column;
     padding: 1px 25px 25px;
     gap: 9px;
+    font-family: 'Intel', sans-serif;
     margin-bottom: 20px;
     position: relative;
   
   /* Notion */
   .tool h3 a {
     color: #0d09ed;
-    font-family: Inter;
     font-size: 40px;
     font-style: normal;
   }
@@ -22,7 +23,6 @@
   /* All in one to organize teams and ideas. Write, plan, collaborate, and get organized. */
   .tool p {
     color: #FFF;
-    font-family: Inter;
     font-size: 20px;
     font-style: normal;
   }
@@ -30,9 +30,8 @@
   /* #organization #planning #collaboration #writing #calendar */
   .tags {
     color: #FFF;
-    font-family: Inter;
     font-size: 15px;
-    font-style: normal;
+    font-weight: bold; 
     white-space: pre-line;
   }
 

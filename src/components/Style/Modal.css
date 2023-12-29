@@ -27,7 +27,6 @@ label {
   font-weight: lighter;
   align-items: left;
   font-family: 'Intel', sans-serif;
-  /* Adicione a fonte Intel e fallback para sans-serif */
   margin-bottom: 6px;
 }
 

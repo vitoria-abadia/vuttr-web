@@ -7,6 +7,8 @@ This is a front-end project for the VUTTR application, which allows the user to 
 - React
 - TypeScript
 - Vite
+- Node-js
+- CSS
 
 ## Setup
 
@@ -97,6 +99,8 @@ Este é um projeto front-end para a aplicação VUTTR, que permite ao usuário l
 - React
 - TypeScript
 - Vite
+- Node-js
+- CSS
 
 ## Configuração
 

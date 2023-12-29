@@ -1,9 +1,6 @@
 import { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import { MouseEvent } from 'react';
 import { Input } from './input';
-import './Modal.css'
+import './../Style/Modal.css';
 import { Dialog } from '@mui/material';
 
 interface ToolData {
@@ -33,6 +30,7 @@ export function CreateModal(props: CreateModalProps) {
       title,
       description,
       tags: tags.split(',').map((tag) => tag.trim()),
+      id: ''
     };
 
 
