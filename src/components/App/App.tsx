@@ -118,10 +118,14 @@ function App() {
           <FiCheckSquare className="CheckSquare" />
           <h3 className="search"> search in tags only </h3>
           <button onClick={handleToggleModal}>
-            <div className="add-input"></div>
+            <div className="add-input">
             <FontAwesomeIcon icon={faPlus} className="add-icon" />
             Add
+            </div>
           </button>
+          <button className="button-remove" onClick={() => setOpenDialog(true)}>
+          X Remove
+        </button>
         </div>
 
         {tools?.map((toolData) => (

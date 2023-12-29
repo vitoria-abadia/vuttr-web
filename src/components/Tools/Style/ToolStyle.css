@@ -1,12 +1,13 @@
 /* Rectangle 4 */
 .tool {
-    width: 750px;
+    width: 730px;
     height: 150px;
     border: 1px solid rgba(255, 255, 255, 0.50);
     background: #201E1E;
     backdrop-filter: blur(2px);
     flex-direction: column;
-    padding: 2px 25px 0;
+    padding: 1px 25px 25px;
+    gap: 9px;
   
   /* Notion */
   .tool h3 a {
@@ -35,6 +36,10 @@
 
   .tags:not(:first-child) {
     margin-left: 12px;
+  }
+
+  .button-remove { 
+
   }
 }
   

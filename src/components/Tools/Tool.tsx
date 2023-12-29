@@ -27,7 +27,7 @@ export function Tool({ id, link, title, description, tags, onRemove }: ToolProps
         <h3>
           <a href={link}>{title}</a>
         </h3>
-        <button onClick={() => setOpenDialog(true)}>
+        <button className="button-remove" onClick={() => setOpenDialog(true)}>
           X Remove
         </button>
       </div>

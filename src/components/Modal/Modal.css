@@ -35,6 +35,11 @@
   gap: 10px;
   align-items: center;
 }
+.Input-container-remove { 
+  display: flex;
+  color: #ffff;
+  gap: 10px;
+}
 
 label {
   font-weight: lighter;
@@ -83,4 +88,62 @@ button {
 
 button:hover {
   background-color: #5a5e5b;
+}
+/* Adicione ao seu arquivo Modal.css */
+
+.modal-overlay {
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente para a sobreposição do modal */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-body {
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente para a sobreposição do modal */
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 400px; /* Largura máxima do corpo do modal */
+  width: 100%;
+}
+
+.title-remove {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.close-icon {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.Input-container-remove {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+a {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.button-cancel,
+.button-remove {
+  background-color: transparent; /* Cor de fundo dos botões */
+  color: #fff;/* Cor do texto dos botões */
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button-remove:hover {
+  background-color: #4c4b4b; /* Cor de fundo dos botões ao passar o mouse */
 }
