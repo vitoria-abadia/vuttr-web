@@ -3,14 +3,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useEffect, useState } from 'react';
 import { FiCheckSquare } from "react-icons/fi";
 import ToolData from '../Interface/ToolData';
-import { CreateModal } from '../Modal/Create-Modal';
+import { CreateModal } from '../Modal/CreateModal/CreateModal';
 import { Tool } from './../Tools/Tool';
-import './index.css';
+import './styles.css';
 
 function App() {
   const [tools, setTools] = useState<ToolData[]>([]);
   const [openDialog, setOpenDialog] = useState<boolean>(false)
-  // const { data } = useToolData();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isModalSearch, setIsModalSearch] = useState(false);
   const [searchName, setSearchName] = useState('');
@@ -19,21 +18,24 @@ function App() {
     setIsModalOpen((prev) => !prev);
   };
 
+
   const handleCancel = () => {
     setIsModalSearch(false);
   };
 
+  // Função para abrir/fechar o modal
   const handleToggleModal = () => {
     setOpenDialog(prevState => !prevState)
   }
 
-
+    // Função para remover uma ferramenta
   const handleRemove = async (id: string) => {
     try {
+      // Requisição DELETE para remover a ferramenta no servidor
       await fetch('http://localhost:3000/' + id, {
         method: 'DELETE',
       });
-      // Atualiza localmente o estado de ferramentas adicionando a nova ferramenta.
+      // Atualiza localmente o estado de ferramentas removendo a ferramenta correspondente
       setTools(p => p.filter(i => i.id != id))
 
       return true
@@ -74,7 +76,7 @@ function App() {
       O resultado é armazenado na variável responseJson.*/
       const responseJson = await response.json();
 
-      // Atualiza localmente o estado de ferramentas adicionando a nova ferramenta.
+      // Atualiza localmente o estado de ferramentas adicionando a nova ferramenta
       setTools(p => [
         ...p,
         responseJson
@@ -87,9 +89,13 @@ function App() {
     }
   }
 
+  // Função assíncrona para buscar a lista de ferramentas do servidor
+  // Requisição GET para obter a lista de ferramentas
   async function fetchTools() {
     const response = await fetch('http://localhost:3000/');
+    // Converte a resposta para JSON
     const responseJson = await response.json();
+    // Atualiza localmente o estado de ferramentas
     setTools(responseJson);
   }
 

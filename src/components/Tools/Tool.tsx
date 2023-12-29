@@ -1,26 +1,69 @@
 import { useState } from 'react';
-import { RemoveModal } from '../Modal/DeleteModal';
-import './../Style/ToolStyle.css';
+import { RemoveModal } from '../Modal/DeleteModal/DeleteModal';
+import './ToolStyle.css';
 
+/**
+ * Interface que define as propriedades de um componente Tool.
+ */
 interface ToolProps {
+  /**
+   * Identificador único da ferramenta.
+   */
   id: string;
+
+  /**
+   * Link associado à ferramenta.
+   */
   link: string;
+
+  /**
+   * Título da ferramenta.
+   */
   title: string;
+
+  /**
+   * Descrição da ferramenta.
+   */
   description: string;
+
+  /**
+   * Lista de tags associadas à ferramenta.
+   */
   tags: string[];
-  onRemove: (id: string) => Promise<boolean>
+
+  /**
+   * Função para remover a ferramenta.
+   * @param id - Identificador único da ferramenta a ser removida.
+   * @returns Uma Promise que resolve para verdadeiro se a remoção for bem-sucedida, falso caso contrário.
+   */
+  onRemove: (id: string) => Promise<boolean>;
+
+  /**
+   * Função para manipular tags.
+   * @param tags - Lista de tags a serem manipuladas.
+   * @returns Uma Promise que resolve para verdadeiro se a manipulação for bem-sucedida, falso caso contrário.
+   */
+  onTags: (tags: string[]) => Promise<boolean>;
 }
 
-export function Tool({ id, link, title, description, tags, onRemove }: ToolProps) {
-  const [openDialog, setOpenDialog] = useState<boolean>(false)
+/**
+ * Componente funcional que representa uma ferramenta.
+ * @param props - Propriedades do componente Tool.
+ */
+export function Tool({ id, link, title, description, tags, onRemove, onTags }: ToolProps) {
+  const [openDialog, setOpenDialog] = useState<boolean>(false);
 
+  /**
+   * Função para remover a ferramenta.
+   */
   const removeTool = async () => {
-    const sucess = await onRemove(id);
+    const success = await onRemove(id);
 
-    if (sucess) {
-      setOpenDialog(false)
+    if (success) {
+      setOpenDialog(false);
     }
-  }
+  };
+
   return (
     <div className="tool">
       <div>

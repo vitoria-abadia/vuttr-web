@@ -30,6 +30,7 @@ body {
   from {
     transform: rotateX(90deg);
   }
+
   to {
     transform: rotateX(0deg);
   }
@@ -78,18 +79,21 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-.Input-search { 
+
+.Input-search {
   width: 70px;
-  color:#FFF;
+  color: #FFF;
   border: 1px solid rgba(255, 255, 255, 0.50);
   background: var(--surface-color-dark-mode, rgba(255, 255, 255, 0.10));
   backdrop-filter: blur(4px);
   padding: 5px 30px;
 }
+
 .search-input {
   position: relative;
   display: flex;
   align-items: center;
+  margin-right: 10px;
 }
 
 .search-icon {
@@ -127,7 +131,7 @@ body {
   top: 50%;
   transform: translateY(50%);
   left: 10px;
-  transition: transform 0.5s, left 0.5s; 
+  transition: transform 0.5s, left 0.5s;
 }
 
 .buttonSearch {
@@ -163,4 +167,14 @@ body {
   left: 10px;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.search {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 100;
+}
+
+.CheckSquare {
+  margin-right: 10px;
 }
