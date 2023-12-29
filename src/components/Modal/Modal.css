@@ -1,24 +1,3 @@
-/* Estilos para o modal */
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-body {
-  padding: 20px;
-  border: 1px solid #000;
-  background: #201E1E;
-  border-radius: 8px;
-  width: 400px;
-  text-align: left;
-}
 
 .titleAdd {
   font-family: 'Intel', sans-serif;
@@ -34,11 +13,14 @@
   flex-direction: column;
   gap: 10px;
   align-items: center;
+  
 }
 .Input-container-remove { 
   display: flex;
-  color: #ffff;
+  color:black;
   gap: 10px;
+  width: 300px;
+  align-items: center;
 }
 
 label {
@@ -62,7 +44,6 @@ input {
   flex-direction: column;
   padding: 16px 24px;
   text-align: left;
-
 }
 
 .containerInput {
@@ -83,67 +64,85 @@ button {
   box-shadow: 4px 4px 2px 0px #030000;
   cursor: pointer;
   margin: 0 auto;
-  /* Adicione esta linha para centralizar o botão */
 }
-
-button:hover {
-  background-color: #5a5e5b;
-}
-/* Adicione ao seu arquivo Modal.css */
 
 .modal-overlay {
-  background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente para a sobreposição do modal */
+  background-color: rgba(0, 0, 0, 0);
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 700px;
   display: flex;
+  font-family: 'Intel', sans-serif;
   justify-content: center;
   align-items: center;
 }
 
 .modal-body {
-  background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente para a sobreposição do modal */
-  border-radius: 8px;
+  border-radius: 0;
+  background: #201E1E;
+  border-radius: 0px;
   padding: 20px;
-  max-width: 400px; /* Largura máxima do corpo do modal */
+  max-width: 500px;
   width: 100%;
+  color: #fff; 
 }
 
 .title-remove {
-  font-size: 24px;
+  font-size: 15px;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   display: flex;
   align-items: center;
+}
+
+.title-remove p {
+  text-align: center;
+  font-size: 14px; 
+  color: #fff;
+  margin: 0; 
+}
+
+.title-remove h2 { 
+  margin-bottom: 5px;
 }
 
 .close-icon {
   margin-right: 10px;
   cursor: pointer;
+  padding: 20px 5px 10px 20px; 
+  font-size: 20px;
 }
 
-.Input-container-remove {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.texto-remove { 
+  padding: 5px 10px 5px 20px; 
 }
 
-a {
-  margin-bottom: 20px;
-  font-size: 16px;
+.button-cancel{ 
+  position: relative;
+  left: 290px; 
+  background-color: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%),
+    rgba(255, 255, 255, 0.10);
+  padding: 5px 14px 5px;
+  border-radius: 0px;
+  cursor: pointer;
 }
 
-.button-cancel,
 .button-remove {
-  background-color: transparent; /* Cor de fundo dos botões */
-  color: #fff;/* Cor do texto dos botões */
-  padding: 10px;
-  border-radius: 4px;
+  position: relative;
+  left: 317px; 
+  background-color: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%),
+    rgba(255, 255, 255, 0.10);
+  padding: 7px 14px 5px;
+  border-radius: 0px;
   cursor: pointer;
 }
 
 .button-remove:hover {
-  background-color: #4c4b4b; /* Cor de fundo dos botões ao passar o mouse */
+  background-color: #312f2f;
+}
+
+button:hover {
+  background-color: #312f2f;
 }

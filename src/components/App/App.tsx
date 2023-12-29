@@ -123,9 +123,6 @@ function App() {
             Add
             </div>
           </button>
-          <button className="button-remove" onClick={() => setOpenDialog(true)}>
-          X Remove
-        </button>
         </div>
 
         {tools?.map((toolData) => (

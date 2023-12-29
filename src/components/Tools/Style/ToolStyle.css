@@ -1,19 +1,21 @@
 /* Rectangle 4 */
 .tool {
     width: 730px;
-    height: 150px;
+    height: auto;
     border: 1px solid rgba(255, 255, 255, 0.50);
     background: #201E1E;
     backdrop-filter: blur(2px);
     flex-direction: column;
     padding: 1px 25px 25px;
     gap: 9px;
+    margin-bottom: 20px;
+    position: relative;
   
   /* Notion */
   .tool h3 a {
     color: #0d09ed;
     font-family: Inter;
-    font-size: 30px;
+    font-size: 40px;
     font-style: normal;
   }
   
@@ -38,8 +40,17 @@
     margin-left: 12px;
   }
 
-  .button-remove { 
-
-  }
+  .button-remove {
+    position: absolute;
+    left: 690px; 
+    top: 10px; 
+    background-color: transparent;
+    color: #ffffff; 
+    border: 0;
+    padding: 5px 14px;
+    cursor: pointer;
+    font-size: 14px;
+    box-shadow: none;
+}
 }
   
