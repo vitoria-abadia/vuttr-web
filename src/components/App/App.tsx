@@ -13,31 +13,26 @@ function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isModalSearch, setIsModalSearch] = useState(false);
   const [searchName, setSearchName] = useState('');
+  const [searchInTagsOnly, setSearchInTagsOnly] = useState(false);
 
   const handleOpenModal = () => {
     setIsModalOpen((prev) => !prev);
   };
 
-
   const handleCancel = () => {
     setIsModalSearch(false);
   };
 
-  // Função para abrir/fechar o modal
   const handleToggleModal = () => {
     setOpenDialog(prevState => !prevState)
   }
 
-    // Função para remover uma ferramenta
   const handleRemove = async (id: string) => {
     try {
-      // Requisição DELETE para remover a ferramenta no servidor
       await fetch('http://localhost:3000/' + id, {
         method: 'DELETE',
       });
-      // Atualiza localmente o estado de ferramentas removendo a ferramenta correspondente
-      setTools(p => p.filter(i => i.id != id))
-
+      setTools(p => p.filter(i => i.id !== id))
       return true
     } catch (e) {
       alert(e)
@@ -45,25 +40,8 @@ function App() {
     }
   };
 
-  /**
- * Função assíncrona para criar uma nova ferramenta.
- * @param tool - Dados da ferramenta a ser criada.
- * @returns Retorna true se a criação for bem-sucedida, false em caso de erro.
- */
-
   async function createTool(tool: ToolData) {
     try {
-      /**
-     * Requisição de envio de dados
-     * @param fetch - para realizar uma requisição HTTP.
-     * @param POST - para requisição de envio de dados.
-     * @returns O URL alvo é 'http://localhost:3000/' e a configuração da 
-     * requisição é um objeto JavaScript com o método 'POST'
-     
-     * @param Content-Type - para indicar que os dados estão no formato JSON.
-     * @param tool - para indicar o corpo da requisição
-     * @returns O 'tool' é convertido para JSON usando JSON.stringify(tool).
-     */
       const response = await fetch('http://localhost:3000/', {
         method: 'POST',
         headers: {
@@ -71,17 +49,8 @@ function App() {
         },
         body: JSON.stringify(tool)
       });
-      /*: Aguarda a conclusão da requisição usando await e, em seguida, converte 
-      a resposta para JSON usando response.json(). 
-      O resultado é armazenado na variável responseJson.*/
       const responseJson = await response.json();
-
-      // Atualiza localmente o estado de ferramentas adicionando a nova ferramenta
-      setTools(p => [
-        ...p,
-        responseJson
-      ])
-
+      setTools(p => [...p, responseJson])
       return true
     } catch (e) {
       alert(e)
@@ -89,19 +58,25 @@ function App() {
     }
   }
 
-  // Função assíncrona para buscar a lista de ferramentas do servidor
-  // Requisição GET para obter a lista de ferramentas
   async function fetchTools() {
     const response = await fetch('http://localhost:3000/');
-    // Converte a resposta para JSON
     const responseJson = await response.json();
-    // Atualiza localmente o estado de ferramentas
     setTools(responseJson);
   }
 
   useEffect(() => {
     fetchTools();
   }, []);
+
+  async function fetchToolsTags() {
+    const response = await fetch(`http://localhost:3000/?searchName=${searchName}&searchInTagsOnly=${searchInTagsOnly}`);
+    const responseJson = await response.json();
+    setTools(responseJson);
+  }
+
+  useEffect(() => {
+    fetchToolsTags();
+  }, [searchInTagsOnly]);
 
   return (
     <>
@@ -120,12 +95,23 @@ function App() {
               onChange={(event) => setSearchName(event.target.value)}
             />
           </div>
-          <FiCheckSquare className="CheckSquare" />
-          <h3 className="search"> search in tags only </h3>
-          <button onClick={handleToggleModal}>
+          <label htmlFor="indeterminate-checkbox" className='buttonCheckbox'>
+            <input className='buttonCheckbox'
+              type='checkbox' 
+              id='indeterminate-checkbox'
+              name='indeterminate-checkbox'
+              onChange={() => setSearchInTagsOnly(!searchInTagsOnly)}
+              checked={searchInTagsOnly}
+            />
+            <div className='searchin'>
+            search in tags only
+            </div>
+          </label>         
+          <h3 className="search"></h3>
+          <button className='buttonAdd' onClick={handleToggleModal}>
             <div className="add-input">
-            <FontAwesomeIcon icon={faPlus} className="add-icon" />
-            Add
+              <FontAwesomeIcon icon={faPlus} className="add-icon" />
+              Add
             </div>
           </button>
         </div>
@@ -133,15 +119,15 @@ function App() {
         {tools?.map((toolData) => (
           <Tool
             key={toolData.id}
-            id={toolData.id} 
+            id={toolData.id}
             link={toolData.link}
             title={toolData.title}
             description={toolData.description}
             tags={toolData.tags}
-            onRemove={handleRemove}
+            onRemove={() => handleRemove(toolData.id)}
           />
         ))}
-      </div >
+      </div>
       <CreateModal
         submit={createTool}
         handleToogleDialog={handleToggleModal}

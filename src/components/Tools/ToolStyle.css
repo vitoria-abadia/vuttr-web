@@ -1,54 +1,54 @@
-
 /* Rectangle 4 */
 .tool {
-    width: 730px;
-    height: auto;
-    border: 1px solid rgba(255, 255, 255, 0.50);
-    background: #201E1E;
-    backdrop-filter: blur(2px);
-    flex-direction: column;
-    padding: 1px 25px 25px;
-    gap: 9px;
-    font-family: 'Intel', sans-serif;
-    margin-bottom: 20px;
-    position: relative;
-  
+  width: 730px;
+  height: auto;
+  border: 1px solid rgba(255, 255, 255, 0.50);
+  background: #201E1E;
+  backdrop-filter: blur(2px);
+  flex-direction: column;
+  padding: 1px 25px 20px;
+  gap: 7px;
+  font-family: 'Intel', sans-serif;
+  margin-bottom: 1px;
+  position: relative;
+  margin-top: 20px; /* Add margin-top to create space above the .tool element */
+
   /* Notion */
-  .tool h3 a {
-    color: #0d09ed;
-    font-size: 40px;
-    font-style: normal;
+  h3 a {
+      color: #0d09ed;
+      font-size: 24px;
+      font-style: normal;
   }
-  
+
   /* All in one to organize teams and ideas. Write, plan, collaborate, and get organized. */
-  .tool p {
-    color: #FFF;
-    font-size: 20px;
-    font-style: normal;
+  p {
+      color: #FFF;
+      font-size: 17px;
+      font-style: normal;
   }
-  
+
   /* #organization #planning #collaboration #writing #calendar */
   .tags {
-    color: #FFF;
-    font-size: 15px;
-    font-weight: bold; 
-    white-space: pre-line;
+      color: #FFF;
+      font-size: 15px;
+      font-weight: bold;
+      white-space: pre-line;
   }
 
   .tags:not(:first-child) {
-    margin-left: 12px;
+      margin-left: 12px;
   }
 
   .button-remove {
-    position: absolute;
-    left: 690px; 
-    top: 10px; 
-    background-color: transparent;
-    color: #ffffff; 
-    border: 0;
-    padding: 5px 14px;
-    cursor: pointer;
-    font-size: 14px;
-    box-shadow: none;
-}
+      position: absolute;
+      left: 690px;
+      top: 10px;
+      background-color: transparent;
+      color: #ffffff;
+      border: 0;
+      padding: 5px 14px;
+      cursor: pointer;
+      font-size: 14px;
+      box-shadow: none;
+  }
 }

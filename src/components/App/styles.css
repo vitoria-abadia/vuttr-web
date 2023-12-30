@@ -14,6 +14,15 @@ body {
   margin-right: 8px;
 }
 
+.add-input{ 
+  margin-right: 10px;
+  
+}
+.buttonAdd { 
+  position: absolute;
+  right: 195px;
+}
+
 .title {
   font-size: 44px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -161,6 +170,20 @@ body {
   display: flex;
   align-items: center;
 }
+.buttonCheckbox {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  margin-left: -1px;
+  top:100px;
+}
+
+.searchin {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  margin: 100px;
+  margin-left: 160px;
+  }
 
 .search-icon {
   position: absolute;
@@ -177,4 +200,4 @@ body {
 
 .CheckSquare {
   margin-right: 10px;
-}
+} 
