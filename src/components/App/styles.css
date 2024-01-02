@@ -1,12 +1,13 @@
 body {
   background: url(/img/bg-desktop.jpg);
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 }
 
 .container {
-  min-height: 100vh;
-  width: 100%;
-  margin: 0 210px;
   display: flex;
 }
 
@@ -20,7 +21,7 @@ body {
 }
 .buttonAdd { 
   position: absolute;
-  right: 195px;
+  right: 218px;
 }
 
 .title {

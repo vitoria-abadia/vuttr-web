@@ -65,11 +65,15 @@ function App() {
   }
 
   async function fetchToolsTags() {
-    const response = await fetch(`http://localhost:3000/?searchName=${searchName}&searchInTagsOnly=${searchInTagsOnly}`);
+    try { 
+    const response = await fetch(`http://localhost:3000/?searchName=${searchName}&searchInTagsOnly=${searchInTagsOnly}`
+    );
     const responseJson = await response.json();
     setTools(responseJson);
+  } catch (e) {
+    alert(e);
   }
-
+  }
   useEffect(() => {
     if (searchName) {
       fetchToolsTags();
