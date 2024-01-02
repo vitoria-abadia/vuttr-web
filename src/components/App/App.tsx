@@ -64,10 +64,6 @@ function App() {
     setTools(responseJson);
   }
 
-  useEffect(() => {
-    fetchTools();
-  }, []);
-
   async function fetchToolsTags() {
     const response = await fetch(`http://localhost:3000/?searchName=${searchName}&searchInTagsOnly=${searchInTagsOnly}`);
     const responseJson = await response.json();
@@ -75,8 +71,13 @@ function App() {
   }
 
   useEffect(() => {
-    fetchToolsTags();
-  }, [searchInTagsOnly]);
+    if (searchName) {
+      fetchToolsTags();
+    }
+    else {
+      fetchTools();
+    }
+  }, [searchName]);
 
   return (
     <>
@@ -86,6 +87,18 @@ function App() {
           <h1 className="subTitle">Very Useful Tools to Remember</h1>
         </div>
         <div className="header">
+        <label htmlFor="indeterminate-checkbox" className='buttonCheckbox'>
+            <input className='buttonCheckbox'
+              type='checkbox'
+              id='indeterminate-checkbox'
+              name='indeterminate-checkbox'
+              onChange={() => setSearchInTagsOnly(!searchInTagsOnly)}
+              checked={searchInTagsOnly}
+            />
+            <div className='searchin'>
+              search in tags only
+            </div>
+          </label>
           <div className="search-input">
             <FontAwesomeIcon icon={faSearch} className="search-icon" />
             <input
@@ -95,18 +108,7 @@ function App() {
               onChange={(event) => setSearchName(event.target.value)}
             />
           </div>
-          <label htmlFor="indeterminate-checkbox" className='buttonCheckbox'>
-            <input className='buttonCheckbox'
-              type='checkbox' 
-              id='indeterminate-checkbox'
-              name='indeterminate-checkbox'
-              onChange={() => setSearchInTagsOnly(!searchInTagsOnly)}
-              checked={searchInTagsOnly}
-            />
-            <div className='searchin'>
-            search in tags only
-            </div>
-          </label>         
+          
           <h3 className="search"></h3>
           <button className='buttonAdd' onClick={handleToggleModal}>
             <div className="add-input">
